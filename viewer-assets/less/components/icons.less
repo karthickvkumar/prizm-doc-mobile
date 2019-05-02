@@ -1,0 +1,87 @@
+@import "variables.less";
+
+[class^="icon-"], [class*=" icon-"]{
+  color: #c5e4de;
+  font-size: 30px;
+//  pointer-events: none;
+}
+
+[class^="icon-Zoom"], [class*=" icon-Zoom"]{
+  font-size: 25px;
+  line-height: 2em;
+}
+
+button[class^="icon-"]{
+  background: transparent;
+  border: none;
+  &:focus, &:active, &:hover{
+    background: transparent;
+    border: none;
+  }
+}
+
+i[class^="icon-"]{
+  transition: color 0.3s;
+  &:hover{
+    transition: color 0.5s;
+    color: @main_bc;
+  }
+}
+
+.icon-Menu{
+  font-size: 25px;
+  line-height: 1.7em !important;
+}
+
+.icon-page{
+  font-size: 20px;
+  line-height: 1em;
+}
+
+/* other inputs */
+//.pccv input[type=text],
+//.pccv input[type=number],
+.pccv .pcc-button {
+    height: 26px;
+    line-height: 26px;
+    vertical-align: middle;
+    border: 1px solid #c2c5ce;
+    border-radius: 2px;
+    outline: none;
+    background: #fbfcfd;
+}
+.pccv .pcc-icon {
+    border-radius: 3px;
+    width: @pccIconWidth;
+    height: 26px;
+    line-height: 26px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.pccv .pcc-icon:focus {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.pccv .pcc-button:focus,
+.pccv .pcc-icon:focus { 
+    border-color: @highlight;
+}
+.pccv .pcc-button:active,
+.pccv .pcc-icon:active { 
+    background: darken(@main_light, 5%);  
+}
+
+.pccv .pcc-tabset-search{
+  i{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  [class^="icon-"], [class*=" icon-"]{
+    font-size: 20px;
+  }
+}

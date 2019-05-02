@@ -1,0 +1,185 @@
+@import (reference) "variables.less";
+
+@rowPadding: 5px 0;
+
+.pccv .pcc-tabset-search {
+  left: 100%;
+  background: @main_dark;
+  transition: left 400ms ease;
+  will-change: left;
+  &.pcc-show {
+    left: 0;
+  }
+  .pcc-icon:active {
+    background: transparent;
+  }
+}
+
+@searchResultDisplayWidth: 60px;
+@searchRightOffset: @pccIconWidth + 10px;
+@searchFullRightOffset: @searchRightOffset + (@pccIconWidth * 2) + @searchResultDisplayWidth + 5px;
+@searchLeftOffset: @pccIconWidth + 10px;
+@searchFullLeftOffset: (@searchLeftOffset * 2) - 10px;
+
+.pcc-search-input {
+  position: relative;
+  line-height: @bottom_toolbar_size;
+  
+  button > i {
+      color: @icons_color;
+    transition: color 0.3s;
+  }
+
+  button:hover > i {
+    transition: color 0.5s;
+    color: #ffffff;
+  }
+
+  [data-pcc-search="back"]:focus {
+    outline: 0;
+    border-color: transparent;
+  }
+
+  input {
+    width: 100%;
+    line-height: 1em;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px solid @highlight_gray;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+
+  .pcc-search-input-wrapper {
+    position: absolute;
+    left: @searchLeftOffset;
+    top: 0;
+    right: @searchRightOffset;
+    
+    input {
+      width: 100%;
+      line-height: 1em;
+      outline: none;
+      border: none;
+      background: none;
+      border-bottom: 1px solid @highlight_gray;
+      padding: 0 5px;
+      box-sizing: border-box;
+      font-height: 1rem;
+      color: @icons_color;
+    }
+    input:focus {
+      border-color: @highlight;
+    }
+    
+    .pcc-search-progress {
+      display: none;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      top: 28px;
+      background: @icons_color;
+    }
+    .pcc-search-progress-thumb {
+      position: relative;
+      height: 100%;
+      width: 0%;
+      background: @highlight;
+    }
+  }
+
+  .pcc-show-full {
+    display: none;
+    &:focus{
+      border-color: transparent;
+    }
+  }
+}
+
+.pcc-search-full {
+  .pcc-show-full {
+    display: inline-block;
+  }
+
+  .pcc-search-input-wrapper {
+    left: @searchFullLeftOffset;
+    right: @searchFullRightOffset;
+  }
+}
+
+.pcc-search-empty{
+  .pcc-search-input-wrapper{
+    left: 40px;
+    right: 235px;
+  }
+
+  .pcc-icon.pcc-show-full{
+    display: none;
+  }
+
+  .pcc-result-display{
+    width: 130px;
+    margin: 0 -11px;
+  }
+}
+
+.pcc-search-nav {
+  display: none;
+}
+
+.pcc-result-display {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  width: @searchResultDisplayWidth;
+  line-height: 26px;
+  color: @icons_color;
+}
+
+.pcc-search-list {
+  display: none;
+  position: absolute;
+  bottom: @bottom_toolbar_size;
+  z-index: 10;  
+  color: @font_light;
+
+  .background_dark_alpha(80%);
+  
+  &.pcc-show {
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    overflow: auto;
+  }
+}
+
+.pcc-results-list {
+  .pcc-row {
+    padding: @rowPadding;
+    border-top: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .pcc-row:hover {
+    .background_light_alpha(35%);
+  }
+
+  .pcc-selected,
+  .pcc-selected:hover {
+    .background_light_alpha(60%);
+    color: @font_dark;
+  }
+}
+
+.pcc-results-list-header {
+  .background_dark_alpha(65%);
+  color: @main_light;
+  padding: @rowPadding;
+  font-size: 1rem;
+
+}

@@ -1,0 +1,48 @@
+.box-shadow (@val) {
+    -webkit-box-shadow: @val;
+       -moz-box-shadow: @val;
+            box-shadow: @val;
+}
+
+.background_dark_alpha (@alpha: 70%) {
+    background-color: lighten(@main_dark_alpha, (100% - @alpha)); // IE8 fallback
+    background-color: fade(@main_dark_alpha, @alpha); // RGBA-capable browsers
+}
+
+.background_light_alpha (@alpha: 55%) {
+    background-color: darken(@main_light_alpha, (100% - @alpha)); // IE8 fallback
+    background-color: fade(@main_light_alpha, @alpha); // RGBA-capable browsers
+}
+
+.selected_effect_light () {
+    // display in IE8 only
+    outline-width: 0;
+    outline-width: 2px \9;
+    outline-style: solid;
+    outline-color: darken(@main_light_alpha, 40%);
+    
+    // modern browsers
+    .box-shadow(0 0 4px 2px fade(@main_light_alpha, 60%));
+}
+
+@font_dark: #333;
+@font_light: #eee;
+
+@main_bc: #fff;
+@main_light: #eee;
+@main_dark: #2e2e2d;
+@main_dark_alpha: #000;
+@main_light_alpha: #eee;
+@icons_color: #c5e4de;
+
+@highlight: #1C86EE;
+@highlight_gray: #c2c5ce;
+@highlight_error: #e24444;
+
+@sidebar_width: 70px;
+@bottom_toolbar_size: 40px;
+
+@pccButtonWidth: 80px;
+@pccButtonMargin: 5px;
+@pccIconWidth: 40px;
+@pccIconMargin: 5px;

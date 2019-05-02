@@ -1,0 +1,48 @@
+@import "variables.less";
+
+.pcc-thumbnail-view {
+    position: absolute;
+    top: -100px;
+    width: 5px;
+    height: 5px;
+    overflow: auto;
+    color: @font_light;
+    text-align: center;
+    .background_dark_alpha;
+}
+.pcc-thumbnail-view.pcc-show {
+    top: 0;
+    left: 0;
+    right: @sidebar_width;
+    bottom: @bottom_toolbar_size;
+    height: auto;
+    width: auto;
+}
+
+.pccThumbnailWrapper {
+    width: 100px;
+    height: 100px;
+}
+.pccThumbnail {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.pccThumbnail,
+.pccThumbnail * {
+    cursor: pointer !important;
+}
+.pccThumbnailWrapper { 
+    margin: 8px 8px 2em;
+    display: inline-block;
+}
+.pccThumbnail.pcc-thumbnail-selected .pccThumbnailView {
+    .selected_effect_light;
+}
+.pccThumbnail .pccThumbnailLabel { padding: 0.5rem 0 0; font-size: 0.8rem; }
+.pccThumbnail .pccThumbnailLabel span { padding: 1px 5px 0; }
+.pccThumbnail.pcc-thumbnail-selected .pccThumbnailLabel span {
+    background: @main_light;
+    color: @font_dark;
+}
