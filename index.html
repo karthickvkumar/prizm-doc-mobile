@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>PrizmDoc</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="viewer-assets/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="viewer-assets/css/normalize.min.css"/>
+    <link rel="stylesheet" href="viewer-assets/css/viewercontrol.css"/>
+    <link rel="stylesheet" href="viewer-assets/css/viewer.css"/>
+
+    <script src="viewer-assets/js/jquery-1.10.2.min.js"></script>
+    <script src="viewer-assets/js/underscore.min.js"></script>
+    <script src="viewer-assets/js/jquery.hotkeys.min.js"></script>
+
+    <script src="viewer-assets/js/viewercontrol.js"></script>
+    <script src="viewer-assets/js/viewer.js"></script>
+    <script src="viewer-assets/js/templateContent.js"></script>
+    <script src="viewer-assets/js/materialize.min.js"></script>
+    <script src="viewer-assets/js/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+        #prizm-doc-loader{
+            display:table; 
+            height:300px;
+            width:100%;
+        }
+
+        #loading-text{
+            display:table-cell;
+            vertical-align:middle;
+            text-align:center;
+        }
+    </style>
+</head>
+<body ng-app="PrizmDoc">
+    <div ng-controller="EditorController as editorCtrl">
+        <div id="prizm-doc-loader" ng-if="isLoading">
+            <h3 id="loading-text">loading...</h3>
+        </div>        
+        <div id="prizm-doc-viewer"></div>
+    </div>
+</body>
+</html>
