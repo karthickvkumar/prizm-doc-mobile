@@ -1,1 +1,17 @@
-
+{
+  "name": "pcc-bookreader",
+  "version": "10.0.0",
+  "description": "a simple bookreader demo for the PCC Viewer",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-less": "~1.0.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "jshint": "^2.8.0"
+  },
+  "scripts": {
+    "watch": "grunt watch",
+    "build": "grunt buildprod"
+  }
+}
